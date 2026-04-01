@@ -1,0 +1,70 @@
+column,type,label,description
+Disease,text,,"""The name of the infectious diseases reported. 
+
+Values:
+'Anaplasmosis', 'Anthrax', 'Babesiosis', 'Botulism, Foodborne', 'Botulism, Other', 'Botulism, Wound', 'Brucellosis', 'Campylobacteriosis', 'Chikungunya Virus Infection', 'Cholera', 'Ciguatera Fish Poisoning', 'Coccidioidomycosis', 'Creutzfeldt-Jakob Disease and other Transmissible Spongiform Encephalopathies', 'Cryptosporidiosis', 'Cyclosporiasis', 'Cysticercosis or Taeniasis', 'Dengue', 'Domoic Acid Poisoning', 'Ehrlichiosis', 'Flavivirus Infection of Undetermined Species', 'Giardiasis', 'Hantavirus Infection', 'Hemolytic Uremic Syndrome', 'Hepatitis E, acute infection',  'Legionellosis', 'Leprosy', 'Leptospirosis', 'Listeriosis', 'Lyme Disease', 'Malaria', 'Paralytic Shellfish Poisoning', 'Paratyphoid Fever', 'Plague, human', 'Psittacosis', 'Q Fever', 'Rabies, human', 'Relapsing Fever', 'Salmonellosis',  'Scombroid Fish Poisoning', 'Shiga toxin-producing E. coli (STEC) with HUS', 'Shiga toxin-producing E. coli (STEC) without HUS', 'Shigellosis', 'Spotted Fever Rickettsiosis', 'Trichinosis', 'Tularemia', 'Typhoid Fever, case', 'Typhus Fever', 'Vibrio Infection (non-Cholera)', 'Viral Hemorrhagic Fevers (human)', 'Yellow Fever', 'Yersiniosis', 'Zika Virus Infection'
+
+Condition Specific Notes:
+Shiga toxin-producing E. coli (STEC) with and without Hemolytic Uremic Syndrome (HUS) include cases of STEC O157 and non-O157 serogroups.  STEC non-O157 required reporting began in 2006.
+'Creutzfeldt-Jakob Disease and other Transmissible Spongiform Encephalopathies'  required reporting began 2007.
+'Chikungunya', 'Flavivirus Infection of Undetermined Species', and 'Zika Virus Infection' required reporting began June 1, 2016 so rates and corresponding confidence intervals were not calculated for 2016.
+'Shigellosis' includes subtypes A thru D and Unspecified.
+'Cyclosporiasis' and 'Hepatitis E, acute infection' required reporting began in 2011.                                                                                                                                                                                                                                                                                                                                                                                                                                                          'Listeriosis' includes reported cases of neonatal and non-neonatal listeriosis.
+‘Hemolytic Uremic Syndrome’ includes all reported cases of hemolytic uremic syndrome (HUS) both with and without evidence of Shiga toxin-producing E. coli (STEC).""
+"
+County,text,,"""The county in which the case-patient resided during illness onset and state-wide total.  
+
+Values include:
+California, Alameda, Alpine, Amador, Butte, Calaveras, Colusa, Contra Costa, Del Norte, El Dorado, Fresno, Glenn, Humboldt, Imperial, Inyo, Kern, Kings, Lake, Lassen, Los Angeles, Madera, Marin, Mariposa, Mendocino, Merced, Modoc, Mono, Monterey, Napa, Nevada, Orange, Placer, Plumas, Riverside, Sacramento, San Benito, San Bernardino, San Diego, San Francisco, San Joaquin, San Luis Obispo, San Mateo, Santa Barbara, Santa Clara, Santa Cruz, Shasta, Sierra, Siskiyou, Solano, Sonoma, Stanislaus, Sutter, Tehama, Trinity, Tulare, Tuolumne, Ventura, Yolo, Yuba.""
+"
+Year,text,,"""Estimated onset date is the date closest to the time when symptoms first appeared from 2001 - 2023. Since a date of onset may not be recorded, the estimated onset date can range from the date of first appearance of symptoms to the date the report was made to California Department of Public Health.
+Value:
+2001 - 2022""
+"
+Sex,text,,"""The patient's sex as reported by the provider. Sex categories were defined as Female (including male to female transgender) and Male (including female to male transgender).  Total includes the sum of """"Male"""",  """"Female""""  and """"Other"""". """"Other"""" captures persons who reported a gender other than """"Male"""" or """"Female"""", which includes instances where gender is missing. 
+
+Values:  
+Male, Female, Total""
+"
+Cases,text,,"""The number of cases reported per disease meeting the surveillance case definition by County, Year, and Sex. National surveillance disease case definitions are found at http://wwwn.cdc.gov/nndss/case-definitions.html.  If blank, the value has been suppressed due to small numbers based on Publication Scoring Criteria published in https://www.dhcs.ca.gov/dataandstats/Documents/DHCS-DDG-V2.0-120116.pdf
+
+Condition Specific Notes:
+Coccidioidomycosis case counts include only """"Confirmed"""" cases and therefore may be lower than counts of combined provisional Suspect, Probable, and Confirmed cases published in the """"Coccidioidomycosis in California Provisional Monthly Report.""""
+
+Value:  
+Positive numeric  ""
+"
+Population,text,,"""The estimated population size (rounded to the nearest integer) for each County, Year, Sex strata.  California Department of Finance (DOF) Population Projection data (P-3 data table) was used to determine the population values for years 2010 - 2023 and estimate totals (E-2 data table) was used to determine the population values for years 2001 - 2009 for a particular demographic subgroup relative to the total State/County population for a given year. These data are available at http://www.dof.ca.gov/Forecasting/Demographics (P-3 data table for 2011 - 2019 available by request). 
+
+Value: 
+Positive numeric ""
+"
+Rate,text,,"""Incidence rate is the number of cases per 100,000 population per County, Year, and Sex using the calculation ((Cases *100,000)/Population). 
+
+Incident Rate value '-' 
+ indicates that there were zero case counts reported per disease by County, Year, and Sex  
+
+Incident Rate value 'SC'
+  indicates that the corresponding row disease case counts have been suppressed due to small numbers based on Publication Scoring Criteria published in   
+  https://www.dhcs.ca.gov/dataandstats/Documents/DHCS-DDG-V2.0-120116.pdf 
+ 
+Incident Rate value 'xxx.xxx*'  (with asterisk)
+  indicates an unstable relative standard error wherein the relative standard error was 23 percent or more of the incidence rate estimate--a threshold recommended by the National Center for Health Statistics. 
+
+Value:  
+Positive numeric decimal (xxx.xxx)""
+"
+Lower_95__CI,text,,"""The lower bound of the 95% confidence interval for the calculated rate was generated using the """"Exact Clopper-Pearson"""" method calculated within SAS 9.4 software. 
+
+Blank confidence interval indicates suppression due to small numbers which is based on Publication Scoring Criteria published in https://www.dhcs.ca.gov/dataandstats/Documents/DHCS-DDG-V2.0-120116.pdf
+
+Value:  
+Positive numeric decimal (xxx.xxx)""
+"
+Upper_95__CI,text,,"""The upper bound of the 95% confidence interval for the calculated rate was generated using the """"Exact Clopper-Pearson"""" method calculated within SAS 9.4 software.
+
+Blank confidence interval indicates suppression due to small numbers which is based on Publication Scoring Criteria published in https://www.dhcs.ca.gov/dataandstats/Documents/DHCS-DDG-V2.0-120116.pdf
+
+Value:  
+Positive numeric decimal (xxx.xxx)""
+"
